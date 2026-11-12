@@ -937,6 +937,13 @@ function organizer() {
   function toggleOpen(id) {
     S.open[id] = !S.open[id];
     refreshCard(id);
+    if (desk() && S.open[id]) {
+      /* opening a card in the list also selects that place on the map */
+      S.pin = id;
+      renderMap(false);
+      const p = ptOf(BY[id]);
+      if (p) mapObj.focus(p);
+    }
   }
   function refreshCard(id) {
     const e = document.getElementById("pl" + id);
@@ -1017,18 +1024,23 @@ function organizer() {
   }
   function pickPin(id) {
     S.pin = id;
-    renderPinCard();
-    renderMap(false);
     const p = ptOf(BY[id]);
-    if (p) mapObj.focus(p);
     if (desk()) {
+      /* desktop: open the card in the list and scroll to it; the map stays put */
+      S.open[id] = true;
+      renderMap(false);
+      refreshCard(id);
       const e = document.getElementById("pl" + id);
       if (e) {
-        e.scrollIntoView({ block: "center", behavior: "smooth" });
+        e.scrollIntoView({ block: "start", behavior: "smooth" });
         e.classList.add("flash");
         setTimeout(() => e.classList.remove("flash"), 1500);
       }
+      return;
     }
+    renderPinCard();
+    renderMap(false);
+    if (p) mapObj.focus(p);
   }
   function renderPinCard() {
     pinHolder.replaceChildren();
@@ -1249,7 +1261,7 @@ function organizer() {
   mapcol = el("div", "mapcol");
   const mapBox = el("div", "mapbox");
   mapBox.id = "map";
-  pinHolder = el("div");
+  pinHolder = el("div", "pinholder");
   mapcol.append(mapBox, pinHolder);
   listcol = el("div", "listcol");
   listHolder = el("div", "plist");

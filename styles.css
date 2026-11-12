@@ -574,6 +574,9 @@ a {
   .org .hide {
     display: flex;
   }
+  .pinholder {
+    display: none;
+  }
   .viewtabs,
   .ttoggle,
   .ftoggle {
