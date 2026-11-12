@@ -1,7 +1,7 @@
 /* ===== YOUR SETTINGS: paste the two values from Supabase (Project Settings > API) ===== */
-const CONFIG = { SUPABASE_URL: "", SUPABASE_ANON_KEY: "" }; // URL like https://abcdxyz.supabase.co  ·  key = the Publishable key (sb_publishable_...) or the legacy anon key
-const MAXPICK = 8; // most places allowed in one vote
-const LABEL_CODE = "Secret word"; // what the entry screen calls the shared passphrase
+const CONFIG = { SUPABASE_URL: "https://tvxzcsyojayniddfexuj.supabase.co", SUPABASE_ANON_KEY: "sb_publishable_JnHLEyWsWbnranhGVw0uaA_6gvT64_p" }; // URL like https://abcdxyz.supabase.co  ·  key = the Publishable key (sb_publishable_...) or the legacy anon key
+const MAXPICK = 6; // most places allowed in one vote
+const LABEL_CODE = "passcode"; // what the entry screen calls the shared passphrase
 const TAGLINE = "Conference food with confidence";
 const PRESETS = [
   {
@@ -17,5 +17,12 @@ const PRESETS = [
     addr: "620 Michigan Ave NE, Washington, DC 20064",
     lat: 38.9338,
     lng: -76.9996,
+  },
+  {
+    label: "Airbnb",
+    name: "Airbnb",
+    addr: "1005 O St NW, Washington, DC 20001",
+    lat: 38.9089,
+    lng: -77.0263,
   },
 ];
