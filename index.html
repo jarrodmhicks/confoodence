@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confoodence</title>
+    <meta name="description" content="Conference food with confidence." />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="paper" id="app"></div>
+      <p class="small mut" style="text-align: center; margin-top: 12px">
+        Map data &copy; OpenStreetMap contributors. Planner times are estimates;
+        vote links use real walking routes when found. Metro times are
+        estimates.
+      </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="config.js"></script>
+    <script src="data.js"></script>
+    <script src="metro.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
